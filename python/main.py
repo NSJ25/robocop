@@ -18,10 +18,12 @@ def press(direction): # ⚠️ Ca doit se jouer quand on appuie sur un bouton il
     global dir, isPressed
     dir = direction
     isPressed = True
+    JsOnClick(dir)
 
 def release(): # ⚠️ Ca doit se jouer quand on relâche le bouton
     global isPressed
     isPressed = False
+    JsOnClick(-1)
     
 def init():
     initPin()
@@ -32,8 +34,7 @@ def initPin():
         x.init(Pin.OUT)
 
 def main_loop():
-    if(isPressed):
-        JsOnClick(dir)
+    pass
 
 init()
 

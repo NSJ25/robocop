@@ -15,6 +15,15 @@ def JsOnClick(direction):
     speed = 0
     freq = 100
 
+    if (dir == -1):
+        # Arrêter toutes les roues
+        wheels = getAllWheel()
+        for wheel in wheels:
+            pwm = PWM(wheel)
+            pwm.freq(freq)
+            pwm.duty_u16(0)
+        return
+
     if isInRange(direction, 0, 1): # forward or backward
         if direction == 0:
             speed = maxSpeed
