@@ -1,0 +1,29 @@
+*{
+    color: rgb(255, 255, 255);
+}
+
+
+body {
+    background-color: rgba(79, 141, 223, 0.753);
+    color: white;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}
+
+main a {
+    border-radius: 10%;
+    border: 5px solid black;
+    background-color: rgb(107, 105, 105);
+    font-size: 20px;
+    text-decoration: none;
+    padding: 20px;
+}
+
+footer {
+    margin-top: 40%;
+    font-size: 20px;
+}
