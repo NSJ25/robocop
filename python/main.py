@@ -8,7 +8,9 @@ from python.controls import JsOnClick
 # Exemple: pin = [Pin(0),Pin(1),Pin(2),Pin(3)]
 # Aussi pas oublier de repertorier les pins existantes dans la liste "pin" ci-dessous. :)
 
-pin = [Pin(0),Pin(1),Pin(2),Pin(3)] # Mettre les pins existantes ici ⚠️
+pin = [Pin(0),Pin(1), #(exemple) Roues droites  Mettre les pins existantes ici ⚠️
+       Pin(2),Pin(3), # (exemple) Roues gauches  Mettre les pins existantes ici ⚠️
+       Pin(4),Pin(5)] # (exemple) Leds  Mettre les pins existantes ici ⚠️
 dir = 0
 isPressed = False
 
