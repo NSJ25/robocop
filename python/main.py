@@ -1,8 +1,24 @@
 from machine import Pin
 from utime import sleep
+from python.controls import JsOnClick
 
-pin = [Pin(0),Pin(1),Pin(2),Pin(3)]
+#  ⚠️ Message important ⚠️
+# Instruction par rapport aux pins au cas où je vais dormir et vous devriez continuer le projet,
+# mettre les pins des roues droites et gauches dans les fonctions getRightWheel() et getLeftWheel() dans pins.py.
+# Exemple: pin = [Pin(0),Pin(1),Pin(2),Pin(3)]
+# Aussi pas oublier de repertorier les pins existantes dans la liste "pin" ci-dessous. :)
 
+pin = [Pin(0),Pin(1),Pin(2),Pin(3)] # Mettre les pins existantes ici ⚠️
+dir = 0
+isPressed = False
+
+def press(direction):
+    dir = direction
+    isPressed = True
+
+def release():
+    isPressed = False
+    
 def init():
     initPin()
 
@@ -12,7 +28,8 @@ def initPin():
         x.init(Pin.OUT)
 
 def main_loop():
-    pass
+    if(isPressed):
+        JsOnClick(dir)
 
 init()
 
