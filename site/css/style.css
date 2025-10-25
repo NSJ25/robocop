@@ -6,29 +6,46 @@
 body {
     background-color: rgba(79, 141, 223, 0.753);
     color: white;
-    body {
-    background-image: url("image/pngtree-cute-cartoon-3d-robot-png-image_13091152.png"); 
+    background-image: url("image/possessed-photography-JjGXjESMxOY-unsplash.jpg"); 
     background-size: cover;      
     background-repeat: no-repeat;
     background-position: center;  
     background-attachment: fixed; /*image bouge pas */
 }
 
-}
+
 
 h1{
-    color: white;
+    color: rgb(205, 189, 200);
     text-align: center;
-    font-size: 60px;
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-main a {
-    border-radius: 10%;
-    border: 5px solid black;
-    background-color: rgb(107, 105, 105);
-    font-size: 20px;
-    text-decoration: none;
+#conteneurButton {
+    margin: 100px 50px;
     padding: 20px;
+    text-align: center;
+
+}
+
+#conteneurButton > button{
+    border: black solid 1px;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-size: 18px;
+    font-family: comic 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: bisque;
+    background-color: #ba9eba;
+
+}
+
+#conteneurButton > button:active {
+    background-color: bisque;
+    color: #ba9eba;
+    text-align: center;
+    transform: scale(0.95);
+
 }
 
 footer {
