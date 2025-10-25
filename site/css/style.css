@@ -6,6 +6,14 @@
 body {
     background-color: rgba(79, 141, 223, 0.753);
     color: white;
+    body {
+    background-image: url("image/pngtree-cute-cartoon-3d-robot-png-image_13091152.png"); 
+    background-size: cover;      
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-attachment: fixed; /*image bouge pas */
+}
+
 }
 
 h1{
