@@ -12,11 +12,13 @@ pin = [Pin(0),Pin(1),Pin(2),Pin(3)] # Mettre les pins existantes ici ⚠️
 dir = 0
 isPressed = False
 
-def press(direction):
+def press(direction): # ⚠️ Ca doit se jouer quand on appuie sur un bouton il va envoyer un numéro de direction, voir controls.py 
+    global dir, isPressed
     dir = direction
     isPressed = True
 
-def release():
+def release(): # ⚠️ Ca doit se jouer quand on relâche le bouton
+    global isPressed
     isPressed = False
     
 def init():
@@ -35,3 +37,4 @@ init()
 
 while 1:
     main_loop()
+    sleep(0.01)

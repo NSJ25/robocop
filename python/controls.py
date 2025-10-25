@@ -2,6 +2,8 @@ from utils import isInRange
 from machine import PWM
 from python.pins import *
 
+#  🛞  Ca c'est pour la navigation
+
 maxSpeed = 65000
 
 def JsOnClick(direction):
@@ -17,7 +19,8 @@ def JsOnClick(direction):
         if direction == 0:
             speed = maxSpeed
         elif direction == 1:
-            speed = -maxSpeed
+            #speed = -maxSpeed
+            speed = 0  # Pour éviter les problèmes avec le PWM négatif
 
         wheels = getAllWheel()
         for wheel in wheels:
@@ -27,11 +30,13 @@ def JsOnClick(direction):
 
     elif isInRange(direction, 2, 3): # left or right
         if direction == 2:
-            leftSpeed = -maxSpeed
+            #leftSpeed = -maxSpeed
+            leftSpeed = 0  # Pour éviter les problèmes avec le PWM négatif
             rightSpeed = maxSpeed
         elif direction == 3:
             leftSpeed = maxSpeed
-            rightSpeed = -maxSpeed
+            #rightSpeed = -maxSpeed
+            rightSpeed = 0  # Pour éviter les problèmes avec le PWM négatif
 
         leftWheels = getLeftWheel()
         rightWheels = getRightWheel()
@@ -45,3 +50,14 @@ def JsOnClick(direction):
             pwm = PWM(wheel)
             pwm.freq(freq)
             pwm.duty_u16(rightSpeed)
+
+#  🚨  Ca c'est pour les leds
+
+def setLedState(state):
+    # state = True (allume les leds) or False (éteint les leds)
+    ledPins = getPinLed()
+    for led in ledPins:
+        if state:
+            led.on()
+        else:
+            led.off()
