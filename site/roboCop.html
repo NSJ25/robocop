@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script> </script>
     <title>projet robocop</title>
 </head>
 <body>
@@ -13,20 +14,73 @@
 
     <main>
        <div id="conteneurButton">
-        <button onclick="start()"> Start </button>
-        <button onclick="stop()"> Stop </button>
         <button onclick="left()"> Left </button>
         <button onclick="right()"> Right </button>
         <button onclick="speak()"> Speak</button>
-        <button onclick="avance()">Advance</button>
-        <button onclick="recule()">Retreat</button>
+        <button onclick="avance()">Top</button>
+        <button onclick="recule()">Bottom</button>
     </div>
          
-         
+                 <div id="robot">🤖</div>
+
          
     </main>
 
     <footer><p>By Mehdi,Daniel,Noah,Jeremie,William,Oumou,Audrey</p></footer>
+<script>
+        const robot = document.getElementById('robot');
+        let topPos = 300;
+        let leftPos = 600;
+        let moveInterval = null;
+        const step = 5;
 
+        // Fait avancer le robot vers le haut
+        function avance() {
+            clearInterval(moveInterval);
+            moveInterval = setInterval(() => {
+                topPos -= step;
+                robot.style.top = topPos + 'px';
+            }, 100);
+        }
+
+        // Fait reculer le robot vers le bas
+        function recule() {
+            clearInterval(moveInterval);
+            moveInterval = setInterval(() => {
+                topPos += step;
+                robot.style.top = topPos + 'px';
+            }, 100);
+        }
+
+        // Fait aller le robot à gauche
+        function left() {
+            clearInterval(moveInterval);
+            moveInterval = setInterval(() => {
+                leftPos -= step;
+                robot.style.left = leftPos + 'px';
+            }, 100);
+        }
+
+        // Fait aller le robot à droite
+        function right() {
+            clearInterval(moveInterval);
+            moveInterval = setInterval(() => {
+                leftPos += step;
+                robot.style.left = leftPos + 'px';
+            }, 100);
+        }
+
+        // Stoppe tout mouvement
+        function stopMoving() {
+            clearInterval(moveInterval);
+        }
+
+        // Juste pour le fun 😄
+        function speak() {
+            alert("Je suis RoboCop 🤖, prêt à bouger !");
+        }
+
+        
+    </script>
 </body>
 </html>
