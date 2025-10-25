@@ -47,8 +47,13 @@ h1{
     transform: scale(0.95);
 
 }
+#conteneurButton :hover{ background-color: #6690aa;   
+  transform: scale(1.05);     
+}
 
 footer {
-    margin-top: 38%;
+    margin-top: 30%;
     font-size: 20px;
+
 }
+
